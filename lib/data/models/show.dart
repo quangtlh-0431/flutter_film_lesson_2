@@ -5,8 +5,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
-part 'show.freezed.dart';
-part 'show.g.dart';
+part 'generated/show.freezed.dart';
+part 'generated/show.g.dart';
 
 Show showFromJson(String str) => Show.fromJson(json.decode(str));
 

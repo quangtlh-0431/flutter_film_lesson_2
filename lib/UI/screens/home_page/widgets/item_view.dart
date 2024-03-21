@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_basic_lesson_2/models/film.dart';
-import 'package:flutter_basic_lesson_2/screens/home_page/widgets/item_detail.dart';
+import 'package:flutter_basic_lesson_2/data/models/film.dart';
+import 'package:flutter_basic_lesson_2/UI/screens/detail_page/detail_page.dart';
 
 class ItemView extends StatelessWidget {
   final Film film;
@@ -17,7 +16,7 @@ class ItemView extends StatelessWidget {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => ItemDetail(film: film)));
+              builder: (context) => DetailPage(film: film)));
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 15),
@@ -32,13 +31,13 @@ class ItemView extends StatelessWidget {
             ),
             Flexible(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 5),
+                padding: const EdgeInsets.only(left: 15, right: 5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                         film.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                         color: Colors.black54
@@ -48,8 +47,7 @@ class ItemView extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                         film.description,
                       maxLines: 4,
-                      style: TextStyle(
-                      ),
+                      textAlign: TextAlign.justify,
                     )
                   ],
                 ),
