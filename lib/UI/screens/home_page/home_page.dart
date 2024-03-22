@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic_lesson_2/data/models/continents.dart';
 import 'package:flutter_basic_lesson_2/data/models/film.dart';
 import 'package:flutter_basic_lesson_2/UI/screens/home_page/home_page_viewmodel.dart';
 import 'package:flutter_basic_lesson_2/UI/screens/home_page/widgets/item_view.dart';
@@ -35,6 +36,9 @@ class ListFilm extends ConsumerWidget {
     List<Film> listFilm =
         ref.watch(homeViewModelProvider.select((value) => value.listFilm));
     homeViewModel.fetchShow("2");
+    List<Continents> listContinents = ref.watch(homeViewModelProvider.select((value) => value.listContinent));
+    homeViewModel.fetchContinents();
+    print(listContinents);
     return Flexible(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),

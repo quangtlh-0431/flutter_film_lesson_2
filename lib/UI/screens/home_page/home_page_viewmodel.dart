@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_basic_lesson_2/data/models/continents.dart';
 import 'package:flutter_basic_lesson_2/data/models/show.dart';
 import 'package:flutter_basic_lesson_2/data/repositories/api_repository.dart';
+import 'package:flutter_basic_lesson_2/data/repositories/continent_repository.dart';
 import 'package:flutter_basic_lesson_2/providers/data_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../data/models/film.dart';
@@ -22,8 +24,13 @@ class HomeViewModel extends ChangeNotifier {
   final List<Film> _listFilm = [];
 
   List<Film> get listFilm => _listFilm;
+  final List<Continents> _listContinent = [];
+
+  List<Continents> get listContinent => _listContinent;
 
   late final ApiRepository _apiRepository = _ref.read(apiProvider);
+  late final ContinentRepository _continentRepository =
+      _ref.read(continentProvider);
 
   Future<Show> fetchShow(String id) {
     _loading = true;
@@ -40,5 +47,11 @@ class HomeViewModel extends ChangeNotifier {
       }
       return value;
     });
+  }
+
+  Future<List<Continents>> fetchContinents() {
+    final results = _continentRepository.getContinents();
+    print("abc $results");
+    return results;
   }
 }

@@ -1,0 +1,6 @@
+query FetchCountries {
+    continents {
+        code
+        name
+    }
+}
