@@ -10,9 +10,9 @@ class AppDio with DioMixin implements Dio {
     options = BaseOptions(
       baseUrl: Constants.endpoint,
       contentType: 'application/json',
-      connectTimeout: const Duration(seconds: 30),
-      sendTimeout: const Duration(seconds: 30),
-      receiveTimeout: const Duration(seconds: 30),
+      connectTimeout: const Duration(seconds: 300),
+      sendTimeout: const Duration(seconds: 300),
+      receiveTimeout: const Duration(seconds: 300),
     );
 
     this.options = options;

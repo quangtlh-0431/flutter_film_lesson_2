@@ -49,9 +49,9 @@ class HomeViewModel extends ChangeNotifier {
     });
   }
 
-  Future<List<Continents>> fetchContinents() {
-    final results = _continentRepository.getContinents();
-    print("abc $results");
+  Future<List<Continents>> fetchContinents() async {
+    final results = await _continentRepository.getContinents();
+    _listContinent.addAll(results);
     return results;
   }
 }

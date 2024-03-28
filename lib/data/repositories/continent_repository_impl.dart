@@ -12,10 +12,7 @@ class ContinentRepositoryImpl implements ContinentRepository {
 
   @override
   Future<List<Continents>> getContinents() {
-    return _continentsServiceService.getContinents().then((value) {
-      print("object $value");
-      return value;
-    });
+    return _continentsServiceService.getContinents();
   }
 
 }

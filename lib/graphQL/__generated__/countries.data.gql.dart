@@ -36,6 +36,8 @@ abstract class GFetchCountriesData
         GFetchCountriesData.serializer,
         json,
       );
+
+  void map(Null Function(dynamic continent) param0) {}
 }
 
 abstract class GFetchCountriesData_continents
